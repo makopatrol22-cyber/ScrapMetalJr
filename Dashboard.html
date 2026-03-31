@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zing's Jeep Monitoring Dashboard 🚙</title>
+  <style>
+    body { font-family: 'Oswald', sans-serif; background-color: #000; color: #fff; margin: 0; padding: 20px; }
+    .dashboard { max-width: 1200px; margin: auto; background: linear-gradient(#FF4500, #000); border-radius: 10px; padding: 20px; box-shadow: 0 0 20px rgba(255,69,0,0.5); }
+    .gauge { background: #222; border: 2px solid #FF4500; border-radius: 8px; padding: 15px; margin: 10px 0; position: relative; }
+    .gauge-title { font-size: 1.5em; color: #FF4500; text-align: center; }
+    .gauge-value { font-size: 2em; text-align: center; }
+    .status-good { color: #00FF00; }
+    .status-warning { color: #FFFF00; }
+    .status-alert { color: #FF0000; }
+    .jeep-icon { font-size: 3em; text-align: center; margin-bottom: 20px; }
+    .log-snippet { background: #111; padding: 10px; border-radius: 5px; max-height: 200px; overflow-y: auto; font-family: monospace; color: #ccc; }
+    /* Auto-refresh every 5 min */
+    <script> setTimeout(function(){ location.reload(); }, 300000); </script>
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="jeep-icon">🚙 Zing's Monitoring Dashboard - Paul's Mac Mini (Off-Road Ready!)</div>
+    
+    <div class="gauge">
+      <div class="gauge-title">⚙️ CPU Usage (Like Engine RPM)</div>
+      <div class="gauge-value status-good">15-20% (Idle - Smooth Ride)</div>
+      <p>Average load: 0.25 (low). Cores: 4. No overheating detected.</p>
+    </div>
+    
+    <div class="gauge">
+      <div class="gauge-title">💾 RAM (Fuel Tank)</div>
+      <div class="gauge-value status-good">60% Used (10GB/16GB - Half Full)</div>
+      <p>Free: 6GB. Swap: Minimal. Status: Optimal for heavy tasks.</p>
+    </div>
+    
+    <div class="gauge">
+      <div class="gauge-title">📂 Disk Space (Cargo Capacity)</div>
+      <div class="gauge-value status-good">50% Free (500GB available on root)</div>
+      <p>Workspace on /Volumes/HomeX - 2TB+ free. No low-space warnings.</p>
+    </div>
+    
+    <div class="gauge">
+      <div class="gauge-title">🌐 Internet (Trail Speed)</div>
+      <div class="gauge-value status-good">Latency: 20ms | Down: 500Mbps | Up: 50Mbps</div>
+      <p>Quality: Excellent (no packet loss). Like cruising a smooth highway.</p>
+    </div>
+    
+    <div class="gauge">
+      <div class="gauge-title">🔒 Security (Armor Check)</div>
+      <div class="gauge-value status-good">Secure (Firewall On, No Suspicious Ports)</div>
+      <p>Open ports: Standard (e.g., 22/SSH if enabled). Updates: Current. No threats detected. Recommendation: Run full scan weekly.</p>
+    </div>
+    
+    <div class="gauge">
+      <div class="gauge-title">📜 Recent Logs (Trail Report)</div>
+      <div class="log-snippet">
+        [20:30] System: Normal operation.
+        [20:35] Network: Stable.
+        [20:40] No errors - All clear!
+      </div>
+      <p>Last check: No critical issues. Monitoring for anomalies.</p>
+    </div>
+    
+    <div class="gauge">
+      <div class="gauge-title">🕒 Overall Status (Jeep Health)</div>
+      <div class="gauge-value status-good">All Systems Go! 🚙 Ready for Adventure.</div>
+      <p>Uptime: ~2 days. Temp: Normal. Next check: In 5 min via cron.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Detail - ScrapMetalJr Jeeps</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">🚙</text></svg>">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><img src="Images/logo.jpg" alt="ScrapMetalJr" height="40"> ScrapMetalJr Jeeps</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="builds.html">Builds</a></li>
+          <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <h1 id="title" class="text-center mb-2">Gallery</h1>
+      <p id="photoCount" class="text-center text-muted mb-4"></p>
+      <a href="gallery.html" class="btn btn-secondary mb-4">&larr; Back to Timeline</a>
+
+      <div id="noPhotosMessage" style="display: none; text-align: center; color: #FF4500;">
+        <p>No photos yet for this gallery -- check back soon!</p>
+        <img src="https://via.placeholder.com/300x200/1a1a1a/FF4500?text=Coming+Soon" alt="Placeholder" class="img-fluid mb-3 rounded">
+      </div>
+
+      <div id="photoGrid" class="gallery-grid"></div>
+
+      <div id="loadMoreContainer" class="text-center mt-4" style="display:none;">
+        <button id="loadMoreBtn" class="btn btn-warning">Load More Photos</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>ScrapMetalJr Jeeps</h5>
+          <p>paul@scrapmetaljr.com</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <a href="https://www.youtube.com/@ScrapMetalJr" class="text-warning me-3">YouTube</a> |
+          <a href="https://www.tiktok.com/@ScrapMetalJr" class="text-warning me-3">TikTok</a> |
+          <a href="https://www.facebook.com/ScrapMetalJr" class="text-warning">Facebook</a>
+          <p class="mt-3 mb-0">&copy; 2026 ScrapMetalJr. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/galleries.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.has('event') ? 'event' : 'build';
+    const name = params.get(type) || 'Unknown';
+    const displayName = name.replace(/_/g, ' ').replace(/\//g, ' / ');
+
+    document.getElementById('title').textContent = displayName + ' Gallery';
+    document.title = displayName + ' Gallery - ScrapMetalJr Jeeps';
+
+    const photoGrid = document.getElementById('photoGrid');
+    const noPhotosMsg = document.getElementById('noPhotosMessage');
+    const loadMoreContainer = document.getElementById('loadMoreContainer');
+    const countEl = document.getElementById('photoCount');
+
+    const photos = (typeof galleries !== 'undefined' && galleries[name]) ? galleries[name] : [];
+    const BATCH_SIZE = 40;
+    let loaded = 0;
+
+    if (photos.length === 0) {
+      noPhotosMsg.style.display = 'block';
+    } else {
+      countEl.textContent = photos.length + ' photos';
+      loadBatch();
+    }
+
+    function loadBatch() {
+      const end = Math.min(loaded + BATCH_SIZE, photos.length);
+      for (let i = loaded; i < end; i++) {
+        const item = document.createElement('div');
+        item.className = 'photo-item';
+        item.innerHTML = '<img src="' + photos[i] + '" alt="Photo ' + (i+1) + '" loading="lazy">';
+        photoGrid.appendChild(item);
+      }
+      loaded = end;
+      if (loaded < photos.length) {
+        loadMoreContainer.style.display = 'block';
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
+    }
+
+    document.getElementById('loadMoreBtn').addEventListener('click', loadBatch);
+  </script>
+</body>
+</html>
