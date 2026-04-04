@@ -98,7 +98,9 @@
       for (let i = loaded; i < end; i++) {
         const item = document.createElement('div');
         item.className = 'photo-item';
-        item.innerHTML = '<img src="' + photos[i] + '" alt="Photo ' + (i+1) + '" loading="lazy">';
+        const cloudPath = photos[i].replace('Images/JeepContent/', '').replace(/\.JPG$/i, '.jpg').replace(/\.JPEG$/i, '.jpg');
+        const cloudUrl = 'https://res.cloudinary.com/dp34ykdrn/image/upload/f_auto,q_auto/' + cloudPath;
+        item.innerHTML = '<img src="' + cloudUrl + '" alt="Photo ' + (i+1) + '" loading="lazy">';
         photoGrid.appendChild(item);
       }
       loaded = end;
