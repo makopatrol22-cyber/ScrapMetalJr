@@ -233,34 +233,9 @@ const galleries = {
     "2022_Krawlin/DSC_8820.jpg",
     "2022_Krawlin/DSC_8847.jpg"
   ],
-  "2023_Jeep_Beach": [
-    "2023_Jeep_Beach/70432695967__8B55EA98-5966-4308-B0AE-593E1584697D.jpg",
-    "2023_Jeep_Beach/DSC_1071.jpg",
-    "2023_Jeep_Beach/DSC_1104.jpg",
-    "2023_Jeep_Beach/DSC_1118.jpg",
-    "2023_Jeep_Beach/DSC_1119.jpg",
-    "2023_Jeep_Beach/DSC_1120.jpg",
-    "2023_Jeep_Beach/DSC_1122.jpg",
-    "2023_Jeep_Beach/DSC_1137.jpg",
-    "2023_Jeep_Beach/DSC_1139.jpg",
-    "2023_Jeep_Beach/DSC_1140.jpg",
-    "2023_Jeep_Beach/DSC_1142.jpg",
-    "2023_Jeep_Beach/DSC_1144.jpg",
-    "2023_Jeep_Beach/DSC_1147.jpg",
-    "2023_Jeep_Beach/DSC_1151.jpg",
-    "2023_Jeep_Beach/IMG_0401.jpg",
-    "2023_Jeep_Beach/IMG_0404.jpg",
-    "2023_Jeep_Beach/IMG_0413.jpg",
-    "2023_Jeep_Beach/IMG_0414.jpg",
-    "2023_Jeep_Beach/IMG_0415.jpg",
-    "2023_Jeep_Beach/IMG_0416.jpg",
-    "2023_Jeep_Beach/IMG_0417.jpg",
-    "2023_Jeep_Beach/IMG_0418.jpg",
-    "2023_Jeep_Beach/IMG_0419.jpg",
-    "2023_Jeep_Beach/IMG_1425.jpg",
-    "2023_Jeep_Beach/JB2023.jpeg",
-    "2023_Jeep_Beach/JB2023a.png",
-  ],
+    "2023_Jeep_Beach": [
+    
+  ],,
   "2023_JWJ": [
   ],
   "2023_Krawlin": [
