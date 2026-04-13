@@ -233,7 +233,7 @@ const galleries = {
     "2022_Krawlin/DSC_8820.jpg",
     "2022_Krawlin/DSC_8847.jpg"
   ],
-    "2023_Jeep_Beach": [
+  "2023_Jeep_Beach": [
     "2023_Jeep_Beach/70432695967__8B55EA98-5966-4308-B0AE-593E1584697D.jpg",
     "2023_Jeep_Beach/DSC_1071.jpg",
     "2023_Jeep_Beach/DSC_1083.jpg",
